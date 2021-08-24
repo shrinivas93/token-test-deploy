@@ -3,7 +3,7 @@ kind: HorizontalPodAutoscaler
 metadata:
   labels:
     app: token-test
-  name: token-test-hpa
+  name: token-test-rollout-hpa
 spec:
   minReplicas: 2
   maxReplicas: 5
