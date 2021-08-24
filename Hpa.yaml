@@ -4,7 +4,6 @@ metadata:
   labels:
     app: token-test
   name: token-test-hpa
-  namespace: canary-explore
 spec:
   minReplicas: 2
   maxReplicas: 4
