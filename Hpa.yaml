@@ -8,12 +8,12 @@ spec:
   minReplicas: 2
   maxReplicas: 5
   metrics:
-    - resource:
+    - type: Resource
+      resource:
         name: cpu
         target:
-          averageUtilization: 10
           type: Utilization
-      type: Resource
+          averageUtilization: 10
   scaleTargetRef:
     apiVersion: argoproj.io/v1alpha1
     kind: Rollout
