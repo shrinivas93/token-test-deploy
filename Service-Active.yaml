@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: token-test-active-service
+spec:
+  selector:
+    app: token-test
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
