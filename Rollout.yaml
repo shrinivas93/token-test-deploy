@@ -18,6 +18,10 @@ spec:
           image: ssshukla1993/token-test:blue
           ports:
             - containerPort: 5000
+          resources:
+            requests:
+              cpu: 100m
+              memory: 200Mi
   strategy:
     blueGreen:
       activeService: token-test-active-service
