@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: token-test-root-service
+spec:
+  selector:
+    app: token-test
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
