@@ -33,7 +33,7 @@ spec:
       maxUnavailable: 0
       trafficRouting:
         nginx:
-          stableIngress: primary-ingress
+          stableIngress: token-test-ingress
       steps:
         - setWeight: 10
         - pause: {}
