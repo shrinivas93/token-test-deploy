@@ -27,13 +27,13 @@ spec:
                 name: token-test-preview-service
                 port:
                   number: 80
-    - host: root.token-test.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: token-test-root-service
-                port:
-                  number: 80
+    # - host: root.token-test.com
+    #   http:
+    #     paths:
+    #       - path: /
+    #         pathType: Prefix
+    #         backend:
+    #           service:
+    #             name: token-test-root-service
+    #             port:
+    #               number: 80
