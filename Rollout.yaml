@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ssshukla1993/token-test:blue
+          image: ssshukla1993/token-test:green
           ports:
             - containerPort: 5000
           resources:
@@ -32,8 +32,12 @@ spec:
       stableService: token-test-active-service
       maxUnavailable: 0
       steps:
+        - setCanaryScale:
+            weight: 10
         - setWeight: 10
-        - pause:
-            duration: 30s
+        - pause: {}
         - setWeight: 50
+        - pause: {}
+        - setCanaryScale:
+            matchTrafficWeight: true
         - pause: {}
