@@ -5,8 +5,8 @@ metadata:
     app: token-test
   name: token-test-rollout-hpa
 spec:
-  minReplicas: 2
-  maxReplicas: 5
+  minReplicas: 10
+  maxReplicas: 10
   metrics:
     - type: Resource
       resource:

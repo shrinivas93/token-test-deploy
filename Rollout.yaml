@@ -20,10 +20,17 @@ spec:
             - containerPort: 5000
           resources:
             requests:
-              cpu: 100m
-              memory: 200Mi
+              cpu: 20m
+              memory: 40Mi
   strategy:
-    blueGreen:
-      activeService: token-test-active-service
-      previewService: token-test-preview-service
-      autoPromotionEnabled: false
+    # blueGreen:
+    #   activeService: token-test-active-service
+    #   previewService: token-test-preview-service
+    #   autoPromotionEnabled: false
+    canary:
+      steps:
+        - setWeight: 10
+        - pause:
+            duration: 30s
+        - setWeight: 50
+        - pause: {}
