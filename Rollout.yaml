@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ssshukla1993/token-test:blue
+          image: ssshukla1993/token-test:green
           ports:
             - containerPort: 5000
           resources:
