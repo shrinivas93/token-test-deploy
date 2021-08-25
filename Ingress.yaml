@@ -13,24 +13,21 @@ spec:
           - path: /
             pathType: Prefix
             backend:
-              service:
-                serviceName: token-test-active-service
-                servicePort: 80
+              serviceName: token-test-active-service
+              servicePort: 80
     - host: preview.token-test.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
-              service:
-                serviceName: token-test-preview-service
-                servicePort: 80
+              serviceName: token-test-preview-service
+              servicePort: 80
     - host: root.token-test.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
-              service:
-                serviceName: token-test-root-service
-                servicePort: 80
+              serviceName: token-test-root-service
+              servicePort: 80
