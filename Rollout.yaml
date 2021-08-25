@@ -34,12 +34,11 @@ spec:
       trafficRouting:
         nginx:
           stableIngress: primary-ingress
-          annotationPrefix: nginx.ingress.kubernetes.io
       steps:
+        - setWeight: 10
+        - pause: {}
         - setCanaryScale:
             weight: 10
-        - pause: {}
-        - setWeight: 10
         - pause: {}
         - setWeight: 50
         - pause: {}
