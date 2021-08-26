@@ -28,7 +28,7 @@ spec:
     #   previewService: token-test-preview-service
     #   autoPromotionEnabled: false
     canary:
-      canaryService: token-test-root-service
+      canaryService: token-test-preview-service
       stableService: token-test-active-service
       maxUnavailable: 0
       trafficRouting:
