@@ -38,7 +38,7 @@ spec:
         - setWeight: 10
         - pause: {}
         - setCanaryScale:
-            weight: 10
+            weight: 30
         - pause: {}
         - setWeight: 50
         - pause: {}
