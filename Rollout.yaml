@@ -30,6 +30,12 @@ spec:
     canary:
       canaryService: token-test-preview-service
       stableService: token-test-active-service
+      canaryMetadata:
+        labels:
+          state: canary
+      stableMetadata:
+        labels:
+          state: stable
       maxUnavailable: 0
       trafficRouting:
         nginx:
