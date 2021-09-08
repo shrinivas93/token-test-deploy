@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ssshukla1993/token-test:blue
+          image: ssshukla1993/token-test:green
           ports:
             - containerPort: 5000
           resources:
@@ -41,13 +41,28 @@ spec:
         nginx:
           stableIngress: token-test-ingress
       steps:
-        - setWeight: 10
-        - pause: {}
+        # - setWeight: 10
+        # - pause: {}
+        # - setCanaryScale:
+        #     weight: 30
+        # - pause: {}
+        # - setWeight: 50
+        # - pause: {}
+        # - setCanaryScale:
+        #     matchTrafficWeight: true
+        # - pause: {}
+          
         - setCanaryScale:
-            weight: 30
+            replicas: 1
         - pause: {}
-        - setWeight: 50
-        - pause: {}
+        - setWeight: 5
         - setCanaryScale:
             matchTrafficWeight: true
-        - pause: {}
+        - pause:
+            duration: 30s
+        - setWeight: 20
+        - pause:
+            duration: 30s
+        - setWeight: 50
+        - pause:
+            duration: 30s
