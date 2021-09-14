@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ssshukla1993/token-test:yellow
+          image: token-service:attempt1
           ports:
             - containerPort: 5000
           resources:
@@ -23,10 +23,6 @@ spec:
               cpu: 20m
               memory: 40Mi
   strategy:
-    # blueGreen:
-    #   activeService: token-test-active-service
-    #   previewService: token-test-preview-service
-    #   autoPromotionEnabled: false
     canary:
       canaryService: token-test-preview-service
       stableService: token-test-active-service
@@ -41,17 +37,6 @@ spec:
         nginx:
           stableIngress: token-test-ingress
       steps:
-        # - setWeight: 10
-        # - pause: {}
-        # - setCanaryScale:
-        #     weight: 30
-        # - pause: {}
-        # - setWeight: 50
-        # - pause: {}
-        # - setCanaryScale:
-        #     matchTrafficWeight: true
-        # - pause: {}
-          
         - setCanaryScale:
             replicas: 1
         - pause: {}

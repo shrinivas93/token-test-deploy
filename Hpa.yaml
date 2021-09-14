@@ -5,15 +5,15 @@ metadata:
     app: token-test
   name: token-test-rollout-hpa
 spec:
-  minReplicas: 10
-  maxReplicas: 10
+  minReplicas: 1
+  maxReplicas: 2
   metrics:
     - type: Resource
       resource:
         name: cpu
         target:
           type: Utilization
-          averageUtilization: 10
+          averageUtilization: 80
   scaleTargetRef:
     apiVersion: argoproj.io/v1alpha1
     kind: Rollout
