@@ -10,6 +10,8 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 5000
+      name: nodePort
     - protocol: TCP
       port: 8443
       targetPort: 8443
+      name: tokenPort
