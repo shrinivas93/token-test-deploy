@@ -24,7 +24,7 @@ spec:
               serviceName: token-test-stable-service
               servicePort: 80
     - host: canary.token-test.com
-      http:
+      https:
         paths:
           - path: /
             pathType: Prefix
