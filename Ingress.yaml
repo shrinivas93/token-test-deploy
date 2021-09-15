@@ -30,7 +30,7 @@ spec:
             pathType: Prefix
             backend:
               serviceName: token-test-canary-service
-              servicePort: 80
+              servicePort: 8443
     - host: root.token-test.com
       http:
         paths:
