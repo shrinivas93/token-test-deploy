@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: token-service:attempt1
+          image: token-service:attempt2
           ports:
             - containerPort: 5000
           resources:
