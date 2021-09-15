@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: token-service:attempt2
+          image: token-service:attempt3
           ports:
             - containerPort: 5000
             - containerPort: 8443
