@@ -14,7 +14,7 @@ spec:
             pathType: Prefix
             backend:
               serviceName: token-test-active-service
-              servicePort: 80
+              servicePort: 443
     - host: stable.token-test.com
       http:
         paths:
@@ -22,7 +22,7 @@ spec:
             pathType: Prefix
             backend:
               serviceName: token-test-stable-service
-              servicePort: 80
+              servicePort: 443
     - host: canary.token-test.com
       http:
         paths:
@@ -38,4 +38,4 @@ spec:
             pathType: Prefix
             backend:
               serviceName: token-test-root-service
-              servicePort: 80
+              servicePort: 443

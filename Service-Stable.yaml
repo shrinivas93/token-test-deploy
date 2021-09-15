@@ -8,5 +8,6 @@ spec:
     state: stable
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 5000
+      port: 443
+      targetPort: 8443
+      name: token-port

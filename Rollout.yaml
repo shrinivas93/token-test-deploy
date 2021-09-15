@@ -15,14 +15,13 @@ spec:
     spec:
       containers:
         - name: app
-          image: token-service:attempt3
+          image: token-service:attempt4
           ports:
-            - containerPort: 5000
             - containerPort: 8443
           resources:
             requests:
-              cpu: 20m
-              memory: 40Mi
+              cpu: 100m
+              memory: 100Mi
   strategy:
     canary:
       canaryService: token-test-preview-service

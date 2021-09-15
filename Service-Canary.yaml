@@ -8,10 +8,6 @@ spec:
     state: canary
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 5000
-      name: node-port
-    - protocol: TCP
       port: 443
       targetPort: 8443
       name: token-port
