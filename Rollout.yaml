@@ -18,6 +18,7 @@ spec:
           image: token-service:attempt2
           ports:
             - containerPort: 5000
+            - containerPort: 8443
           resources:
             requests:
               cpu: 20m
