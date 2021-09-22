@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: token-test-rollout
+  labels:
+    env: us-west-2
 spec:
   replicas: null
   revisionHistoryLimit: 2
@@ -12,7 +14,6 @@ spec:
     metadata:
       labels:
         app: token-test
-        env: us-west-2
     spec:
       containers:
         - name: app
