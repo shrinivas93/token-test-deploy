@@ -12,6 +12,7 @@ spec:
     metadata:
       labels:
         app: token-test
+        env: us-west-2
     spec:
       containers:
         - name: app
@@ -51,3 +52,16 @@ spec:
         - setWeight: 50
         - pause:
             duration: 30s
+      analysis:
+        templates:
+        - templateName: success-rate
+        args:
+        - name: app-name
+          value: token-test
+        - name: pod-hash
+          valueFrom:
+            podTemplateHashValue: Latest
+        - name: env
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['env']

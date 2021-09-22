@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: success-rate
+spec:
+  args:
+    - name: pod-hash
+    - name: app-name
+    - name: env
+  metrics:
+  - name: success-rate
+    # NOTE: prometheus queries return results in the form of a vector.
+    # So it is common to access the index 0 of the returned array to obtain the value
+    successCondition: result[0] >= 0.95
+    failureLimit: 3
+    provider:
+      prometheus:
+        address: http://prometheus-service:9090
+        
+        query: avg by (pod_hash) (
+              label_replace(
+               identity_privacy_token_availability_metrics,
+                "pod_hash",
+                "$1",
+                "pod",
+                ".*-({{args.pod-hash}})-.*"
+              )
+            )
