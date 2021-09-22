@@ -15,7 +15,7 @@ spec:
     failureLimit: 3
     provider:
       prometheus:
-        address: http://prometheus-service:30001
+        address: http://prometheus-service.default:9090
         
         query: avg by (pod_hash) (
               label_replace(
